@@ -1,0 +1,2 @@
+mach create
+machine LoadPlatformDescription @platforms/boards/stm32f4_discovery.repl
