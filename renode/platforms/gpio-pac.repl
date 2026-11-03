@@ -1,0 +1,2 @@
+gpioPortD:
+    12 -> UserLED@0
