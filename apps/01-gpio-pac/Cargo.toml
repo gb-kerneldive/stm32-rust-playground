@@ -1,0 +1,12 @@
+[package]
+name = "gpio-pac"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+cortex-m = "0.7.7"
+cortex-m-rt = "0.7.5"
+panic-halt = "0.2"
+
+stm32f4 = { version = "0.15.1", features = ["stm32f407", "rt"] }

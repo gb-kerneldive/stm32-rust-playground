@@ -1,3 +1,15 @@
 [workspace]
 resolver = "2"
-members = ["apps/00-smoke"]
+members = [
+    "apps/00-smoke",
+    "apps/01-gpio-pac",
+]
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+opt-level = "s"
+lto = true
+codegen-units = 1
