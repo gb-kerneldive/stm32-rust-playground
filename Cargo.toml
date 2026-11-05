@@ -3,6 +3,7 @@ resolver = "2"
 members = [
     "apps/00-smoke",
     "apps/01-gpio-pac",
+    "apps/01-gpio-hal",
 ]
 
 [profile.dev]

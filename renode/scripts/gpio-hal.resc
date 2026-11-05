@@ -1,0 +1,13 @@
+mach create "stm32f407-gpio-hal"
+
+# Charger la carte
+machine LoadPlatformDescription @platforms/boards/stm32f4_discovery.repl
+
+# Ajouter la LED virtuelle sur PD12
+machine LoadPlatformDescription @renode/platforms/gpio-hal.repl
+
+# Charger le firmware Rust
+sysbus LoadELF @target/thumbv7em-none-eabihf/release/gpio-hal
+
+# Démarrer la simulation
+start
