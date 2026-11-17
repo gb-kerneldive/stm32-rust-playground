@@ -4,6 +4,7 @@ members = [
     "apps/00-smoke",
     "apps/01-gpio-pac",
     "apps/01-gpio-hal",
+    "apps/02-exti-pac",
 ]
 
 [profile.dev]

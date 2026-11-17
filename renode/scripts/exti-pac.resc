@@ -1,0 +1,18 @@
+mach create "stm32f407-exti-pac"
+
+# Charger la carte (le bouton PA0 "UserButton" y est deja cable)
+machine LoadPlatformDescription @platforms/boards/stm32f4_discovery.repl
+
+# Ajouter la LED virtuelle sur PD12
+machine LoadPlatformDescription @renode/platforms/exti-pac.repl
+
+# Charger le firmware Rust
+sysbus LoadELF @target/thumbv7em-none-eabihf/release/exti-pac
+
+# Demarrer la simulation
+start
+
+# Commande Renode our simuler l'appui sur le bouton :
+#   sysbus.gpioPortA.UserButton PressAndRelease
+# Pour lire l'etat de la LED :
+#   sysbus.gpioPortD.UserLED State
