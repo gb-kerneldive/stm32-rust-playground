@@ -1,2 +1,12 @@
+// stm32f4.repl declares "gpioPortA [0-15] -> exti@[0-15]", but a later block
+// "gpioPortA: 0 -> timer2@00 | timer5@00" REPLACES the connection of pin 0.
+// Result: PA0 no longer reaches EXTI0. We restore it and keep the timers.
+//
+// stm32f4.repl declare "gpioPortA [0-15] -> exti@[0-15]", mais un bloc plus loin
+// "gpioPortA: 0 -> timer2@00 | timer5@00" REMPLACE la connexion de la broche 0.
+// Resultat : PA0 n'atteint plus EXTI0. On la retablit en gardant les timers.
+gpioPortA:
+    0 -> exti@0 | timer2@00 | timer5@00
+
 gpioPortD:
     12 -> UserLED@0
